@@ -1,0 +1,13 @@
+package example;
+
+public class Operate03 {
+
+	public static void main(String[] args) {
+		int kor = 100, eng = 87, math = 41;
+		
+		boolean result = kor>=50 && eng>=50 && math>=50 && (kor+eng+math) / 3 >= 60;
+		System.out.println(result);
+
+	}
+
+}

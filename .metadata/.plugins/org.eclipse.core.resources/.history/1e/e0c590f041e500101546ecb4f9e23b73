@@ -1,0 +1,21 @@
+package ifexample;
+
+import java.util.Scanner;
+
+public class IfEx01 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+
+		
+		int dbld = 1234;
+		int dbPw = 1111;
+		
+		System.out.println("ID 입력: ");
+		int 
+		
+
+	}
+
+}

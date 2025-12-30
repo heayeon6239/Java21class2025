@@ -1,0 +1,31 @@
+package ifexample;
+
+import java.util.Scanner;
+
+public class IfEx01 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		// ★ String 은 객체 데이터 타입 ->
+		// ( dbld = "1234" 값이 저장된 힙메모리 주소가 dbid에 존재하기 때문에 값을 직접 비교할 수 없음 )
+		// 이런 경우 문자열을 비교할 때는 반드시 ★ equals()매서드를 이용해서 힙메모리 값을 직접 비교!!
+		// ★ int 기본 데이터 타입 -> 변수에 값이 직접 저장 ( == 으로 직접 비교 가능 )
+		String dbld = "1234";
+		String dbPW = "1111";
+		
+		System.out.print("ID 입력: ");
+		String id = scan.next();
+		System.out.print("PW 입력: ");
+		String pw = scan.next();
+		
+		// ★ equals()에서 부정을 할 땐 !를 앞에 넣음
+		if(!dbld.equals(id) & !dbPW.equals(pw)) {
+			System.out.println("로그인 성공");
+		}else {
+			System.out.println("로그인 실패");
+		}
+	}
+
+}

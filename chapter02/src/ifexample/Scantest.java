@@ -1,0 +1,27 @@
+package ifexample;
+
+import java.util.Scanner;
+
+public class Scantest {
+
+	public static void main(String[] args) {
+		
+		// ★ Scanner는 자료를 키보드로 부터 입력받을 수 있는 클래스(class)임
+		// 단, Scanner는 클래스이므로 반드시 new Scanner()형식으로 생성!
+		// class를 사용하는 목적 : 매서드의 재사용이 용이함
+		Scanner scan = new Scanner(System.in);
+		// scan은 새로 생성된 클래스 이름
+		
+		int age = 0;
+		System.out.println("나이를 입력하세요 : ");
+		age = scan.nextInt();
+		//int age = scan.nextInt(); // 이것도 가능
+		//System.out.printf("홍길동의 나이는 %d입니다.%n",age); // %n -> printf에서만 사용 가능
+		
+		// - 이름을 입력받아 출력하세요
+		System.out.println("이름을 입력하세요 : ");
+		String name = scan.next(); // 공백 전의 한 단어만 입력받는 매서드
+		System.out.printf("%n%s의 나이는 %d세 입니다.",name,age);
+	}
+
+}

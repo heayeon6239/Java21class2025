@@ -1,0 +1,26 @@
+package ifexample;
+
+import java.util.Scanner;
+
+public class IfEx01 {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		String dbld = "1234";
+		String dbPW = "1111";
+		
+		System.out.print("ID 입력: ");
+		String id = scan.next();
+		System.out.print("PW 입력: ");
+		String pw = scan.next();
+		
+		if(id == dbld & pw == dbPW) {
+			System.out.println("로그인 성공");
+		}else {
+			System.out.println("로그인 실패");
+		}
+	}
+
+}
