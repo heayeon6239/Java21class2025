@@ -6,7 +6,9 @@ import java.util.ArrayList;
 public class Book {
 	
 	int maxPrice = 0;
-	int count = 0;
+//	int count = 0;
+	String title = null;
+	String write = null; // 필드명에 초기값 지정안하면 출력하면 에러뜸, null값 주는 이유
 	
 	// 디폴트 생성자
 	public Book() {};
@@ -32,9 +34,12 @@ public class Book {
 		for(BookList b : list) {
 			if(b.getPrice() > maxPrice) {
 				maxPrice = b.getPrice();
-				count ++;
+//				count ++;
+				title = b.getTitle();
+				write = b.getWrite();
 			}
 		}
-		System.out.println("제목: "+list.get(count-1).getTitle()+"\t"+"저자: "+list.get(count-1).getWrite()+"\t"+"가격: "+p.format(list.get(count-1).getPrice()));
+//		System.out.println("제목: "+list.get(count-1).getTitle()+"\t"+"저자: "+list.get(count-1).getWrite()+"\t"+"가격: "+p.format(maxPrice));
+		System.out.println("제목: "+title+"\t"+"저자: "+write+"\t"+"가격: "+p.format(maxPrice));
 	}
 }
