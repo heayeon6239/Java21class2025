@@ -32,7 +32,13 @@ public class ItemManager {
 	
 	// 카테고리 추가 및 item 추가 메서드
 	public void info(String name, int price, String category) {
-		itemList.add(new Item(name, price, category));
+		int cateIndex = 0;
+		for(int i=0; i<this.category.size(); i++) {
+			if(category == this.category.get(i)) {
+				cateIndex = i; // 입력한 카테고리와 같은 카테고리 인덱스 저장
+			}
+		}
+		itemList.add(new Item(name, price, this.category.get(cateIndex)));
 	}
 	
 	// 카테고리 출력 메서드

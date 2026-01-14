@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class Shopping extends UserMenu{
 	
-	// ItemManager인스턴스
+	// ItemManager 인스턴스
 	ItemManager im = new ItemManager();
+	// Cart 인스턴스
+	Cart c = new Cart();
 	
 	Scanner scan = new Scanner(System.in);
 	
@@ -39,18 +41,21 @@ public class Shopping extends UserMenu{
 	}
 	
 	// 쇼핑메뉴
-	public void shopMenu(int shopMenu) {
+	public void shopMenu() {
+		System.out.println("[1]쇼핑목록");
+		System.out.println("[2]장바구니");
+		System.out.println("[0]뒤로가기");
+	}
+	
+	// 쇼핑목록
+	public void shoppingList(int shopMenu) {
 		for(int i=0; i<im.itemList.size(); i++) {
 			if(im.itemList.get(i).category.equals(im.category.get(shopMenu))) {
 				System.out.println("["+i+"]"+"["+im.itemList.get(i).name+"]"+"["+im.itemList.get(i).price+"]"+"["+im.itemList.get(i).category+"]");
 			}
 		}
 	}
-	
-	// 쇼핑메뉴 프린트 메서드
-	public void printShop() {
-		System.out.println();
-	}
+
 	
 	//메뉴
 	public void menu() {
@@ -76,9 +81,38 @@ public class Shopping extends UserMenu{
 			}
 			// [3] 쇼핑
 			if(menu == 3) {
-				System.out.println("쇼핑목록 선택:");
-				int Menu = scan.nextInt();
-				shopMenu(Menu);
+				shopMenu(); // 쇼핑메뉴 출력
+				int Menu01 = scan.nextInt();
+				
+				// [1]쇼핑목록
+				if(Menu01 == 1) {
+					System.out.println("[0]과자");
+					System.out.println("[1]생선");
+					System.out.println("[2]육류");
+					System.out.println("[3]음료수");
+					System.out.println("카테고리 선택:      [뒤로가기 -1]");
+					int cate = scan.nextInt();
+					// [-1]뒤로가기
+					if(cate == -1) {
+						continue;
+					}
+					// 카테고리 선택할 경우
+					else {
+						shoppingList(cate); // 해당 카테고리 상품항목 출력
+						System.out.println("상품 선택: ");
+						int selItem = scan.nextInt();
+						c.addCart(super.id[log],im.itemList.get(selItem));
+					}
+					
+				}
+				// [2]장바구니
+				else if(Menu01 == 2) {
+					System.out.println("=========== 내 장바구니 ===========");
+					c.printOneCart(super.id[log]);
+					System.out.println("=================================");
+				}
+				
+				
 			}
 			// [0] 종료
 			if(menu == 0) {

@@ -18,7 +18,7 @@ public class VIPcutomer extends Customer{
 	@Override
 	// 고객 정보 출력 메서드
 	public String showCustomerInfo() {
-		return super.showCustomerInfo() + "\n, 담당 전문 상담은"+agentID+"번 입니다.";
+		return super.showCustomerInfo() + " 담당 전문 상담은"+agentID+"번 입니다.";
 	}
 	
 }

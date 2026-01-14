@@ -27,7 +27,7 @@ public class Customer {
 		// 명시적형변환 ★★★★★ (데이터 타입 변환)
 		bonusPoint += (int)(price*bonusRatio);
 		int Price = price;
-		if(grade == "VIP") {
+		if(grade == "VIP" || grade == "GOLD") {
 			Price = price-(price/10);
 		}
 		return Price;
