@@ -6,8 +6,12 @@ public class Shopping extends UserMenu{
 	
 	// ItemManager 인스턴스
 	ItemManager im = new ItemManager();
+	
 	// Cart 인스턴스
 	Cart c = new Cart();
+	
+	// ManagerMenu 인스턴스
+	ManagerMenu mm = new ManagerMenu();
 	
 	Scanner scan = new Scanner(System.in);
 	
@@ -22,9 +26,17 @@ public class Shopping extends UserMenu{
 		this.PW = inputPW;
 		for(int i=0; i<super.id.length; i++) {
 			if(super.id[i].equals(ID) && super.pw[i].equals(PW)) {
-				System.out.println("["+id[i]+"]님, 환영합니다.");
-				super.log = i; // 로그인된 아이디 인덱스 번호로 log 변경
-				return;
+				// 관리자일 경우
+				if(super.id[i].equals("mmm") && super.pw[i].equals("123")) {
+					System.out.println("당신은 관리자 입니다.");
+					// 관리자 메뉴 클래스 출력
+					
+				}else {
+					System.out.println("["+id[i]+"]님, 환영합니다.");
+					super.log = i; // 로그인된 아이디 인덱스 번호로 log 변경
+					return;
+				}
+				
 			}
 		}
 		System.out.println("아이디와 비밀번호를 확인해주세요.");
