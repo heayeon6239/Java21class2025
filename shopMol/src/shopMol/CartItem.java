@@ -7,7 +7,8 @@ public class CartItem {
 	String name = null;
 	int price = 0;
 	String category = null;
-	
+	int quan ; 
+
 	// 기본 디폴트 생성자
 	public CartItem() {};
 	
@@ -17,11 +18,12 @@ public class CartItem {
 		this.name = item.name;
 		this.price = item.price;
 		this.category = item.category;
+		this.quan = 1;
 	}
 	
 	// 출력 메서드
 	public void printCart() {
-		System.out.println("["+logID+"] 항목: "+name+","+"금액: "+price+","+"수량: "+category+"개");
+		System.out.println("["+logID+"] 항목: "+name+","+"금액: "+(price*quan)+"원,"+"수량: "+quan+"개");
 	}
 
 }

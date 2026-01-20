@@ -32,4 +32,9 @@
     <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="diExample03.PaymentProcessor"/>
+    <fullyQualifiedTypeName name="diExample05.ShapeInterface"/>
+    <fullyQualifiedTypeName name="diExample05.ShapeCalculator"/>
+    <fullyQualifiedTypeName name="diExample07.PercentDiscount"/>
+    <fullyQualifiedTypeName name="diExample07.DiscountInterface"/>
 </qualifiedTypeNameHistroy>

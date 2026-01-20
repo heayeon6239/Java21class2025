@@ -11,14 +11,6 @@ public class ShopMain {
 		
 		Shopping sh = new Shopping();
 		sh.menu();
-		
-//		ItemManager m = new ItemManager();
-//		m.printItemList();
-//		m.printCategory();
-		
-		
-		
-		
 
 	}
 
